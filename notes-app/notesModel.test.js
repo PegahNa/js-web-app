@@ -1,28 +1,24 @@
 const NotesModel = require("./notesModel");
 
-describe("NotesModel", () => {
-  describe("getNotes", () => {
-    it("Returns all notes", () => {
-      const model = new NotesModel();
-      expect(model.getNotes()).toEqual([]);
-    });
+describe("Notes model class", () => {
+  it("starts with no notes", () => {
+    const notes = new NotesModel();
+
+    expect(notes.getNotes()).toEqual([]);
   });
 
-  describe("addNote", () => {
-    it("adds a todo", () => {
-      const model = new NotesModel();
-      model.addNote("Buy milk");
-      model.addNote("Go to the gym");
-      expect(model.getNotes()).toEqual(["Buy milk", "Go to the gym"]);
-    });
+  it("adds a notes", () => {
+    const notes = new NotesModel();
+    notes.addNote("Buy milk");
+
+    expect(notes.getNotes()).toEqual(["Buy milk"]);
   });
 
-  describe("reset", () => {
-    it("clears the notes", () => {
-      const model = new NotesModel();
-      model.addNote("Buy milk");
-      model.reset();
-      expect(model.getNotes()).toEqual([]);
-    });
+  it("resets the list of notes", () => {
+    const notes = new NotesModel();
+    notes.addNote("Buy milk");
+    notes.reset();
+
+    expect(notes.getNotes()).toEqual([]);
   });
 });
