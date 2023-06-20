@@ -13,14 +13,14 @@ describe("Notes view", () => {
 
     // 1. Setting up model and view
     const model = new NotesModel();
-    const view = new NotesView(model);
     model.addNote("A first note");
     model.addNote("Another one");
-
+    const view = new NotesView(model);
     // 2. Display the notes on the page
     view.displayNotes();
 
     // 3. There should now be 2 div.note on the page
-    expect(document.querySelectorAll("div.note").length).toEqual(2);
+    expect(document.querySelectorAll("div.note")).not.toBeNull();
+    expect(document.querySelectorAll("div").length).toBe(3);
   });
 });

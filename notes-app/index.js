@@ -1,6 +1,7 @@
-const NotesView = require("./notesView");
-const NotesModel = require("./notesModel");
+const NotesView = require("./notesView.js");
+const NotesModel = require("./notesModel.js");
 
 const model = new NotesModel();
-
-console.log(model.getNotes());
+model.addNote("Test note");
+const view = new NotesView(model);
+view.displayNotes();
