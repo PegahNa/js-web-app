@@ -17,4 +17,17 @@ describe("MessageView", () => {
     // Assert
     expect(document.querySelector("#message")).not.toBeNull();
   });
+  // show the hide message
+  it("hides the message", () => {
+    document.body.innerHTML = fs.readFileSync("./index.html");
+
+    const view = new MessageView();
+
+    const buttonEl = document.querySelector("#show-message-button");
+    buttonEl.click();
+    const hideButtonEl = document.querySelector("#hide-message-button");
+    hideButtonEl.click();
+    // Assert that the message element is not on the page
+    expect(document.querySelector("#message")).toBeNull();
+  });
 });
