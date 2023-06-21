@@ -14,6 +14,9 @@ class NotesView {
   }
 
   displayNotes() {
+    this.MainContainer.innerHTML = "";
+
+    // For each note, create and append a new element on the main container
     this.model.getNotes().forEach((element) => {
       const newElement = document.createElement("div");
       newElement.id = "note";
