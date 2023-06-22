@@ -3,6 +3,10 @@ class NotesModel {
     this.notes = [];
   }
 
+  setNotes(data) {
+    return this.data;
+  }
+
   getNotes() {
     return this.notes;
   }
