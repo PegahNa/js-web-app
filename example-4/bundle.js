@@ -52,6 +52,12 @@
           });
         }
         display(repoData) {
+          const name = document.querySelector("#repo_name");
+          name.textContent = repoData.full_name;
+          const description = document.querySelector("#repo-description");
+          description.textContent = repoData.description;
+          const image = document.querySelector("#repo-image");
+          image.src = repoData.organization.avatar_url;
         }
       };
       module.exports = GithubView2;
