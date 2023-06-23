@@ -24,6 +24,13 @@ describe("Notes view", () => {
     expect(document.querySelectorAll("div").length).toBe(3);
   });
 
+  it("display notes from Api", () => {
+    const model = new NotesModel();
+    const view = new NotesView(model);
+    view.displayNotesFromApi();
+    expect(document.querySelectorAll("div.note").length).toBe(1);
+  });
+
   it("adds a new note", () => {
     document.body.innerHTML = fs.readFileSync("./index.html");
 
